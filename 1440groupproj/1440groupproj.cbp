@@ -32,6 +32,9 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="1440groupproj.cbp" />
+		<Unit filename="1440groupproj.depend" />
+		<Unit filename="1440groupproj.layout" />
 		<Unit filename="SDL_Plotter.cpp" />
 		<Unit filename="SDL_Plotter.h" />
 		<Unit filename="main.cpp" />

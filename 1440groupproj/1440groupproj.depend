@@ -2,7 +2,7 @@
 1731533794 source:c:\users\jack fontenot\documents\github\grouprojfall24\1440groupproj\sdl_plotter.cpp
 	"SDL_Plotter.h"
 
-1731966808 c:\users\jack fontenot\documents\github\grouprojfall24\1440groupproj\sdl_plotter.h
+1731967329 c:\users\jack fontenot\documents\github\grouprojfall24\1440groupproj\sdl_plotter.h
 	<SDL2/SDL.h>
 	<SDL2/SDL_mixer.h>
 	<string.h>
