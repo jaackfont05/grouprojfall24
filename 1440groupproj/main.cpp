@@ -5,6 +5,19 @@ using namespace std;
 
 int main(int argc, char** argv)
 {
-    cout << "Hello world!" << endl;
+    char q;
+    int arr[19][19];
+    int counter = 0;
+
+    while(playing){
+
+        //getclick
+
+        //update where click is
+
+
+
+    }
+
     return 0;
 }
