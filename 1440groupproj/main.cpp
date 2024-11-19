@@ -107,11 +107,6 @@ void checkCapture(char currBoard[][5], bool blackTurn){
     for(int i = 0; i < 5; i++){
         for(int j = 0; j < 5; j++){
             captured[i][j] = spaceCaptured(checkedBoard, i, j, blackTurn);
-            for(int r = 0; r < 5; r++){
-                for(int c = 0; c < 5; c++){
-                    checkedBoard[r][c] = currBoard[r][c];
-                }
-            }
         }
     }
     for(int i = 0; i < 5; i++){
@@ -130,11 +125,11 @@ void checkCapture(char currBoard[][5], bool blackTurn){
 
 bool spaceCaptured(char currBoard[][5], int r, int c, bool blackTurn){
     bool up, down, left, right;
-    if(currBoard[r][c] == 'e'){
-        return false;
-    }
     if(r == -1 || r == 5 || c == -1 || c == 5 || currBoard[r][c] == 'p'){
         return true;
+    }
+    if(currBoard[r][c] == 'e'){
+        return false;
     }
     if(blackTurn){
         if(currBoard[r][c] == 'b'){
@@ -152,6 +147,12 @@ bool spaceCaptured(char currBoard[][5], int r, int c, bool blackTurn){
     down  = spaceCaptured(currBoard, r+1, c, blackTurn);
     left  = spaceCaptured(currBoard, r, c-1, blackTurn);
     right = spaceCaptured(currBoard, r, c+1, blackTurn);
+    if(blackTurn){
+        currBoard[r][c] = 'w';
+    }
+    else{
+        currBoard[r][c] = 'b';
+    }
     if(up && down && left && right){
         return true;
     }
