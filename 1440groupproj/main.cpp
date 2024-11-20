@@ -4,6 +4,10 @@
 
 using namespace std;
 
+bool scoredBlack(char currBoard[][SIZE], int r, int c);
+bool scoredWhite(char currBoard[][SIZE], int r, int c);
+void score(char currBoard[][SIZE]);
+
 int main(int argc, char** argv){
     char currBoard[SIZE][SIZE];
     char pastBoard[SIZE][SIZE];
@@ -18,7 +22,7 @@ int main(int argc, char** argv){
     createBoard(nextBoard);
 
 
-    while(pass != 2){
+    while(pass < 2){
         printBoard(currBoard);
 
         if(isBlackTurn(turn)){
@@ -30,7 +34,7 @@ int main(int argc, char** argv){
         do{
             valid = false;
             cin >> xCord >> yCord;
-            if(xCord != -1){
+            if(xCord > -1 && yCord > -1 && xCord < SIZE && yCord < SIZE){
 
                 if(isBlackTurn(turn)){
                     nextBoard[xCord][yCord] = 'b';
@@ -55,10 +59,9 @@ int main(int argc, char** argv){
                 valid = true;
             }
         }while(valid == false);
-
         turn++;
-
     }
+    score(currBoard);
 
     return 0;
 }
