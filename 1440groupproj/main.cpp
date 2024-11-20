@@ -4,10 +4,6 @@
 
 using namespace std;
 
-bool scoredBlack(char currBoard[][SIZE], int r, int c);
-bool scoredWhite(char currBoard[][SIZE], int r, int c);
-void score(char currBoard[][SIZE]);
-
 int main(int argc, char** argv){
     char currBoard[SIZE][SIZE];
     char pastBoard[SIZE][SIZE];
