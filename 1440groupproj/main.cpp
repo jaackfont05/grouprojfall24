@@ -1,6 +1,8 @@
 #include <iostream>
 #include "SDL_Plotter.h"
 #include "rules.h"
+#include "token.h"
+#include "line.h"
 
 using namespace std;
 

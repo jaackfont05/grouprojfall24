@@ -37,7 +37,22 @@
 		<Unit filename="1440groupproj.layout" />
 		<Unit filename="SDL_Plotter.cpp" />
 		<Unit filename="SDL_Plotter.h" />
+		<Unit filename="line.cpp">
+			<Option target="&lt;{~None~}&gt;" />
+		</Unit>
+		<Unit filename="line.h">
+			<Option target="&lt;{~None~}&gt;" />
+		</Unit>
 		<Unit filename="main.cpp" />
+		<Unit filename="rules.h">
+			<Option target="&lt;{~None~}&gt;" />
+		</Unit>
+		<Unit filename="token.cpp">
+			<Option target="&lt;{~None~}&gt;" />
+		</Unit>
+		<Unit filename="token.h">
+			<Option target="&lt;{~None~}&gt;" />
+		</Unit>
 		<Extensions>
 			<lib_finder disable_auto="1" />
 		</Extensions>
