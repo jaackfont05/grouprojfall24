@@ -44,6 +44,7 @@
 			<Option target="&lt;{~None~}&gt;" />
 		</Unit>
 		<Unit filename="main.cpp" />
+<<<<<<< Updated upstream
 		<Unit filename="rules.h">
 			<Option target="&lt;{~None~}&gt;" />
 		</Unit>
@@ -53,6 +54,9 @@
 		<Unit filename="token.h">
 			<Option target="&lt;{~None~}&gt;" />
 		</Unit>
+=======
+		<Unit filename="rules.h" />
+>>>>>>> Stashed changes
 		<Extensions>
 			<lib_finder disable_auto="1" />
 		</Extensions>
