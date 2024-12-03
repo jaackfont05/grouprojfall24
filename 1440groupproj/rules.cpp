@@ -1,3 +1,8 @@
+//Mason Crippen
+//Jack Fontenot
+//Andrei Kuvshinikov
+//Connor Griffin
+
 #include "rules.h"
 
 //Turn
@@ -146,34 +151,50 @@ bool surrondingCaptured(char currBoard[][SIZE], int r, int c, bool blackTurn){
     bool up = false, down = false, left = false, right = false;
     if(r > 0){
         if(blackTurn){
-            up    = whiteCaptured(currBoard, r-1, c);
+            if(currBoard[r-1][c] != 'b'){
+                up    = whiteCaptured(currBoard, r-1, c);
+            }
         }
         else{
-            up    = blackCaptured(currBoard, r-1, c);
+            if(currBoard[r-1][c] != 'w'){
+                up    = blackCaptured(currBoard, r-1, c);
+            }
         }
     }
     if(r < SIZE-1){
         if(blackTurn){
-            down  = whiteCaptured(currBoard, r+1, c);
+            if(currBoard[r+1][c] != 'b'){
+                down  = whiteCaptured(currBoard, r+1, c);
+            }
         }
         else{
-            down  = blackCaptured(currBoard, r+1, c);
+            if(currBoard[r+1][c] != 'w'){
+                down  = blackCaptured(currBoard, r+1, c);
+            }
         }
     }
     if(c > 0){
         if(blackTurn){
-            left  = whiteCaptured(currBoard, r, c-1);
+            if(currBoard[r][c-1] != 'b'){
+                left  = whiteCaptured(currBoard, r, c-1);
+            }
         }
         else{
-            left  = blackCaptured(currBoard, r, c-1);
+            if(currBoard[r][c-1] != 'w'){
+                left  = blackCaptured(currBoard, r, c-1);
+            }
         }
     }
     if(c < SIZE-1){
         if(blackTurn){
-            right = whiteCaptured(currBoard, r, c+1);
+            if(currBoard[r][c+1] != 'b'){
+                right = whiteCaptured(currBoard, r, c+1);
+            }
         }
         else{
-            right = blackCaptured(currBoard, r, c+1);
+            if(currBoard[r][c+1] != 'w'){
+                right = blackCaptured(currBoard, r, c+1);
+            }
         }
     }
     if(up || down || left || right){
