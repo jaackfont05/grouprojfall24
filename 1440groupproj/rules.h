@@ -8,28 +8,13 @@
 
 #include "SDL_Plotter.h"
 #include "token.h"
-
-const int SIZE = 19;
-const int BOARDSIZE = 760;
-const int SIDE = BOARDSIZE / SIZE;
-const color emptyColor(220, 220, 220);
-const color whiteColor(255, 255, 255);
-const color blackColor(0, 0, 0);
-const color boardColor(227, 166, 86);
+#include "grid.h"
 
 //Turn
 bool isBlackTurn(int turn);
 
 //Pass
 void turnPassed(int turn);
-
-//building boards
-void copyBoard(char newBoard[][SIZE], char copiedBoard[][SIZE]);
-void drawBoard(char board[][SIZE]);
-void createBoard(char board[][SIZE]);
-void drawBoard(SDL_Plotter& g, token tokenBoard[][SIZE]);
-void createTokenBoard(char currBoard[][SIZE], token tokenBoard[][SIZE]);
-void updateTokenBoard(char currBoard[][SIZE], token tokenBoard[][SIZE]);
 
 //Checking for captures
 bool spaceCaptured(char currBoard[][SIZE], int r, int c, bool blackTurn);
