@@ -9,6 +9,7 @@
 #include "token.h"
 #include "rules.h"
 #include "line.h"
+#include "config.h"
 
 using namespace std;
 
@@ -29,6 +30,10 @@ int main(int argc, char** argv){
     createBoard(nextBoard);
 
     createTokenBoard(currBoard, tokenBoard);
+
+    cout << "Press 'p' to pass" << endl;
+    cout << "Press 's' to see the current score" << endl;
+
     while(!g.getQuit() && pass < 2){
         //drawBoard(currBoard);
         drawBoard(g, tokenBoard);
@@ -41,13 +46,13 @@ int main(int argc, char** argv){
             cout << "White choose space to play or choose -1 to pass" << endl;
         }*/
         if(g.kbhit()){
-            switch(g.getKey()){
-                case 'p':
+            switch(toupper(g.getKey())){
+                case 'P':
                     turnPassed(turn);
                     pass++;
                     turn++;
                     break;
-                case 's':
+                case 'S':
                     score(currBoard);
                     break;
             }
