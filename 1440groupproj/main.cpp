@@ -1,15 +1,18 @@
 #include <iostream>
 #include "SDL_Plotter.h"
-#include "rules.h"
 #include "token.h"
+#include "rules.h"
 #include "line.h"
 
 using namespace std;
 
 int main(int argc, char** argv){
+    SDL_Plotter g(BOARDSIZE, BOARDSIZE);
+
     char currBoard[SIZE][SIZE];
     char pastBoard[SIZE][SIZE];
     char nextBoard[SIZE][SIZE];
+    token tokenBoard[SIZE][SIZE];
     int xCord, yCord;
     int turn = 0;
     int pass = 0;
@@ -19,47 +22,60 @@ int main(int argc, char** argv){
     createBoard(pastBoard);
     createBoard(nextBoard);
 
+    createTokenBoard(currBoard, tokenBoard);
+    while(!g.getQuit() && pass < 2){
+        //drawBoard(currBoard);
+        drawBoard(g, tokenBoard);
+        g.update();
 
-    while(pass < 2){
-        printBoard(currBoard);
-
-        if(isBlackTurn(turn)){
+        /*if(isBlackTurn(turn)){
             cout << "Black choose space to play or choose -1 to pass" << endl;
         }
         else{
             cout << "White choose space to play or choose -1 to pass" << endl;
+        }*/
+        if(g.kbhit()){
+            switch(g.getKey()){
+                case 'p':
+                    turnPassed(turn);
+                    pass++;
+                    turn++;
+                    break;
+                case 's':
+                    score(currBoard);
+                    break;
+            }
         }
-        do{
+
+        if (g.mouseClick()) {
             valid = false;
-            cin >> xCord >> yCord;
-            if(xCord > -1 && yCord > -1 && xCord < SIZE && yCord < SIZE){
 
-                if(isBlackTurn(turn)){
-                    nextBoard[xCord][yCord] = 'b';
-                }
-                else{
-                    nextBoard[xCord][yCord] = 'w';
-                }
+            point p = g.getMouseClick();
+            xCord = p.y / SIDE;
+            yCord = p.x / SIDE;
 
-                valid = validPlay(nextBoard, pastBoard, currBoard, xCord, yCord, turn);
-
-                if(valid){
-                    copyBoard(pastBoard, currBoard);
-                    copyBoard(currBoard, nextBoard);
-                }
-                else{
-                    copyBoard(nextBoard, currBoard);
-                }
-                pass = 0;
+            if(isBlackTurn(turn)){
+                nextBoard[xCord][yCord] = 'b';
             }
             else{
-                pass++;
-                valid = true;
+                nextBoard[xCord][yCord] = 'w';
             }
-        }while(valid == false);
-        turn++;
+
+            valid = validPlay(nextBoard, pastBoard, currBoard, xCord, yCord, turn);
+
+            if(valid){
+                copyBoard(pastBoard, currBoard);
+                copyBoard(currBoard, nextBoard);
+                pass = 0;
+                turn++;
+            }
+            else{
+                copyBoard(nextBoard, currBoard);
+            }
+        }
+        updateTokenBoard(currBoard, tokenBoard);
     }
-    score(currBoard);
+    finalScore(currBoard);
 
     return 0;
 }
