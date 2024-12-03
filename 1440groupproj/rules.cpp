@@ -246,6 +246,11 @@ void score(char currBoard[][SIZE]){
         }
     }
 
+    if(blackScore == 361 && whiteScore == 361){
+        blackScore = 0;
+        whiteScore = 0;
+    }
+
     cout << "Black Score: " << blackScore << endl;
     cout << "White Score: " << whiteScore << endl << endl;
 }
@@ -264,6 +269,11 @@ void finalScore(char currBoard[][SIZE]){
             }
             copyBoard(checkedBoard, currBoard);
         }
+    }
+
+    if(blackScore == 361 && whiteScore == 361){
+        blackScore = 0;
+        whiteScore = 0;
     }
 
     cout << "Black Score: " << blackScore << endl;
