@@ -1,3 +1,9 @@
+//Mason Crippen
+//Jack Fontenot
+//Connor Griffin
+//Andrei Kuvshinikov
+
+
 #include "token.h"
 
 token::token(){

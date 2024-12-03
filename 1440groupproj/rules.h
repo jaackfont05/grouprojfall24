@@ -1,5 +1,13 @@
+//Mason Crippen
+//Jack Fontenot
+//Connor Griffin
+//Andrei Kuvshinikov
+
 #ifndef RULES_H_INCLUDED
 #define RULES_H_INCLUDED
+
+#include "SDL_Plotter.h"
+#include "token.h"
 
 const int SIZE = 19;
 const int BOARDSIZE = 760;

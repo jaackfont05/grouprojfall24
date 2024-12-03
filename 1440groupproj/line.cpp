@@ -1,3 +1,9 @@
+//Mason Crippen
+//Jack Fontenot
+//Connor Griffin
+//Andrei Kuvshinikov
+
+
 #include "line.h"
 
 void drawLine(int x1, int y1, int x2, int y2, int R, int G, int B, SDL_Plotter& g){

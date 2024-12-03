@@ -1,3 +1,9 @@
+//Mason Crippen
+//Jack Fontenot
+//Connor Griffin
+//Andrei Kuvshinikov
+
+
 #ifndef LINE_H_INCLUDED
 #define LINE_H_INCLUDED
 

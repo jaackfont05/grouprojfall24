@@ -1,3 +1,9 @@
+//Mason Crippen
+//Jack Fontenot
+//Connor Griffin
+//Andrei Kuvshinikov
+
+
 #include <iostream>
 #include "SDL_Plotter.h"
 #include "token.h"
