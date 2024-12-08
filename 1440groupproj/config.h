@@ -6,6 +6,8 @@
 #ifndef CONFIG_H_INCLUDED
 #define CONFIG_H_INCLUDED
 
+#include "SDL_Plotter.h"
+
 const int SIZE = 19;
 const int BOARDSIZE = 760;
 const int SIDE = BOARDSIZE / SIZE;
