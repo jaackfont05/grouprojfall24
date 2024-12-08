@@ -22,10 +22,10 @@ bool isBlackTurn(int turn);
 
 //Pass
 /*
- * description: checks if a turn has been passed
+ * description: passes the current player's turn
  * return: void
  * precondition: 'p' is pressed
- * postcondition: returns true if a turn has passed
+ * postcondition: the current player's turn is passed
  *
 */
 void turnPassed(int turn);
@@ -41,19 +41,19 @@ void turnPassed(int turn);
 bool spaceCaptured(char currBoard[][SIZE], int r, int c, bool blackTurn);
 
 /*
- * description: checks if white captured a space
+ * description: checks if a white piece is captured
  * return: bool
- * precondition: white is placed adjacent to a black piece
- * postcondition: returns true if a black piece is captured
+ * precondition: black is placed adjacent to a white piece
+ * postcondition: returns true if a white piece is captured
  *
 */
 bool whiteCaptured(char currBoard[][SIZE], int r, int c);
 
 /*
- * description: checks if black captured a space
+ * description: checks if a black piece is captured
  * return: bool
- * precondition: black is placed adjacent to a white piece
- * postcondition: returns true if a white piece is captured
+ * precondition: white is placed adjacent to a black piece
+ * postcondition: returns true if a black piece is captured
  *
 */
 bool blackCaptured(char currBoard[][SIZE], int r, int c);
@@ -62,7 +62,7 @@ bool blackCaptured(char currBoard[][SIZE], int r, int c);
  * description: checks surrounding spaces for capture
  * return: bool
  * precondition: a piece is placed
- * postcondition: returns if spaces around the piece are captured
+ * postcondition: returns true if a space around the piece is captured
  *
 */
 bool surrondingCaptured(char currBoard[][SIZE], int r, int c, bool blackTurn);
